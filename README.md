@@ -1,4 +1,4 @@
-#Tata Steel Sentinel AI
+Tata Steel Sentinel AI
 
 **Predictive Maintenance Intelligence Platform**  
 Built for the **Tata Steel AI Hackathon 2026 — Round 2**
