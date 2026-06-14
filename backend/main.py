@@ -395,12 +395,7 @@ alert_log: List[Dict] = []            # real-time alerts
 # Build RAG knowledge base + train AI4I model on startup
 @app.on_event("startup")
 async def startup_event():
-    logger.info("Building RAG knowledge base...")
-    success = build_knowledge_base()
-    if success:
-        logger.info("RAG knowledge base ready.")
-    else:
-        logger.warning("RAG knowledge base build failed — keyword fallback active.")
+    # RAG knowledge base loads lazily on first query to stay within free-tier memory limits
 
     logger.info("Training AI4I predictive maintenance model...")
     ml_ok = train_ml_model()

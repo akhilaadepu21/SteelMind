@@ -93,6 +93,8 @@ def build_knowledge_base():
 
 def retrieve_context(query: str, k: int = 5) -> str:
     global _retriever
+    if _retriever is None:
+        build_knowledge_base()
     if _retriever is not None:
         try:
             docs = _retriever.invoke(query)
