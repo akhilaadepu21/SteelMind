@@ -144,6 +144,10 @@ def predict_for_equipment(equipment_id: str, sensor_data: dict = {}) -> dict:
     Run AI4I model prediction for a given equipment + live sensor readings.
     Falls back to calibrated statistical estimates if dataset is not loaded.
     """
+    global _trained
+    if not _trained:
+        train()
+
     profile = EQUIPMENT_PROFILES.get(equipment_id, EQUIPMENT_PROFILES["Pump-12"])
 
     if _trained and _scaler and _failure_model and _model:

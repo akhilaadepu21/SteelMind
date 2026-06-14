@@ -395,15 +395,8 @@ alert_log: List[Dict] = []            # real-time alerts
 # Build RAG knowledge base + train AI4I model on startup
 @app.on_event("startup")
 async def startup_event():
-    # RAG knowledge base loads lazily on first query to stay within free-tier memory limits
-
-    logger.info("Training AI4I predictive maintenance model...")
-    ml_ok = train_ml_model()
-    if ml_ok:
-        stats = get_dataset_stats()
-        logger.info(f"AI4I model ready — {stats['rows']} rows, failure rate: {stats['failure_rate']:.1%}")
-    else:
-        logger.warning("AI4I model training skipped — statistical fallback active.")
+    # Both RAG and ML model load lazily on first request to stay within free-tier 512MB RAM
+    logger.info("SteelMind API ready — models will load on first request.")
 
 
 # ??? REQUEST / RESPONSE MODELS ?????????????????????????????????????????????????
