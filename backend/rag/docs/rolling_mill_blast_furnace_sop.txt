@@ -1,0 +1,104 @@
+ROLLING MILL AND BLAST FURNACE - CRITICAL EQUIPMENT SOP
+Document: SOP-CRIT-002 | Revision 5.0 | Tata Steel Maintenance Engineering
+
+=== ROLLING MILL CRITICAL SYSTEMS ===
+
+ROLL NECK BEARING MAINTENANCE
+Operating Parameters:
+  - Vibration (axial): 0.5–3.0 mm/s (ALARM: >4.5 mm/s, TRIP: >8.0 mm/s)
+  - Bearing temperature: 35–65°C (ALARM: >75°C, TRIP: >85°C)
+  - Lubricant water content: <0.3% (max 0.5%)
+  - Grease pressure: 2.5–4.0 bar
+
+Failure Mode: Roll Neck Bearing Failure
+Root Causes (in order of frequency):
+  1. Water contamination in lubricant (50% of cases) - from roll cooling water
+  2. Overloading from mill cobble or abnormal rolling force (25%)
+  3. Lubrication starvation from blocked grease line (15%)
+  4. Fatigue from extended high-speed operation (10%)
+
+Inspection SOP (SOP-RM-011):
+  Step 1: Every 4 hours - check vibration analyzer reading on HMI
+  Step 2: If vibration increases >0.5 mm/s in single shift - trigger inspection
+  Step 3: Draw grease sample from bearing housing (syringe method)
+  Step 4: Test water content with portable moisture analyzer
+  Step 5: Check grease line pressure at lubricator unit
+  Step 6: If water content >0.5% - flush bearing with fresh grease immediately
+  Step 7: Schedule roll change at next available window if vibration trend upward
+  Step 8: Document in rolling mill log with spectrogram attachment
+
+Early Warning Signs (7-14 days before failure):
+  - Vibration increasing >10% per week
+  - High-frequency noise (metallic clicking at >500 Hz)
+  - Temperature asymmetry between drive and operator side bearings >5°C
+  - Grease color change to dark brown/black (oxidation) or milky (water)
+
+=== HYDRAULIC SYSTEM - ROLLING MILL ===
+Critical Parameters:
+  - Hydraulic pressure: 280-320 bar
+  - Oil temperature: 40-60°C (ALARM: >70°C)
+  - Oil cleanliness: ISO 4406 Class 17/15/12 or better
+  - Filter differential pressure: <2.5 bar (replace at >3 bar)
+
+Failure Mode: Hydraulic System Contamination
+Root Cause: Particulate ingress from cylinder rod seal wear, reservoir breather failure
+Symptoms: Erratic cylinder movement, valve hunting, excessive filter replacement
+Action: Flush system with clean oil, replace all filters, inspect cylinder rod seals
+Risk: Mill dimension control failure can cause product quality defects
+
+=== BLAST FURNACE CRITICAL EQUIPMENT ===
+
+STOVE HOT BLAST VALVE MAINTENANCE
+Function: Controls hot blast flow between stoves and blast furnace tuyeres
+Temperature: Valve operating at 1000-1150°C (CRITICAL equipment)
+Failure Consequences: BF process disruption, safety hazard, production loss >24 hrs
+
+Failure Mode: Valve Seat Leakage
+Symptoms: Abnormal hot blast temperature distribution, valve skin temperature >200°C
+Root Causes:
+  1. Thermal cycling fatigue in seat ring (after >50,000 open/close cycles)
+  2. Dust buildup on seating surface preventing proper closure
+  3. Actuator force insufficient (spring pre-load degraded)
+Maintenance Action:
+  - Every 6 months: Seat leak test using nitrogen pressure method
+  - Every 12 months: Actuator spring tension verification
+  - At >50,000 cycles: Mandatory seat ring replacement
+
+BF COOLING STAVE SYSTEM
+Failure Mode: Cooling Stave Burnout
+Symptoms: Stave outlet temperature >80°C, reduced cooling water flow <2.5 m3/hr per stave
+Root Causes:
+  1. Internal erosion from burden material abrasion
+  2. Thermal shock from freeze-thaw cycling
+  3. Copper stave corrosion (pH <6.5 in cooling water)
+Immediate Action: Isolate stave circuit, increase parallel circuit flow, notify BF manager
+Production Impact: Single stave burnout = monitor closely; >3 staves in zone = consider tapping rate reduction
+
+=== EMERGENCY SHUTDOWN PROCEDURES ===
+Equipment Criticality Classification:
+TIER 1 (Plant-wide shutdown risk): BF tuyere cooling pumps, stove hot blast system
+TIER 2 (Area shutdown): Rolling mill hydraulics, continuous caster cooling
+TIER 3 (Manageable degradation): Individual pump stations, conveyor segments
+
+Tier 1 Equipment Failure Protocol:
+1. Immediately notify Shift Manager and Plant Manager
+2. Activate standby system if available
+3. Assess time to safe shutdown vs. continued operation
+4. If continued operation: Post continuous observer, 15-minute reading cycle
+5. Prepare emergency maintenance team (callout if required)
+6. Document all actions with timestamps
+
+=== SPARE PARTS CRITICALITY MATRIX ===
+Equipment: Rolling Mill Roll Neck Bearing
+  Part: FAG 23240 Spherical Roller Bearing
+  Criticality: CRITICAL | On-site stock: 2 pairs | Lead time if out of stock: 28 days
+  Estimated RUL trigger for reorder: When RUL < 30 days, reorder 1 pair
+
+Equipment: BF Cooling Pump (Pump-12, Pump-08)
+  Part: SKF 6310 C3 Bearing
+  Criticality: CRITICAL | On-site stock: 4 units | Lead time: 3 days
+  Estimated RUL trigger: When RUL < 14 days and stock <2 units
+
+Equipment: Mechanical Seal (John Crane Type 1, 60mm shaft)
+  Criticality: HIGH | On-site stock: 2 assemblies | Lead time: 7 days
+  Reorder when stock <1 assembly

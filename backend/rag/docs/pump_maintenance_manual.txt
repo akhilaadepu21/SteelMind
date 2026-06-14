@@ -1,0 +1,103 @@
+CENTRIFUGAL PUMP MAINTENANCE MANUAL - STEEL PLANT OPERATIONS
+Equipment Type: Centrifugal Pump | Model Series: CP-3000 / CP-5000
+Document ID: MNL-PUMP-001 | Revision: 4.2
+
+=== SECTION 1: EQUIPMENT OVERVIEW ===
+Centrifugal pumps in the steel plant are used for cooling water circulation, slag
+flushing, hydraulic systems, and blast furnace cooling. Critical pump stations
+include: Pump-12 (BF cooling loop), Pump-08 (rolling mill hydraulics),
+Pump-23 (continuous caster secondary cooling), Pump-07 (slag granulation).
+
+Normal Operating Parameters:
+- Bearing Temperature: 45–75°C (WARNING: >80°C, CRITICAL: >90°C)
+- Vibration Velocity: 0.1–3.5 mm/s RMS (WARNING: >4.5 mm/s, CRITICAL: >7.0 mm/s)
+- Discharge Pressure: 95–115 bar (WARNING: <90 or >120 bar)
+- Motor Current: 85–110% of rated FLA
+- Shaft Speed: ±2% of rated RPM
+- Oil Temperature: 40–65°C
+
+=== SECTION 2: FAILURE MODES AND ROOT CAUSES ===
+
+FAILURE MODE: Bearing Overheating
+Symptoms: Bearing temperature >80°C, burning smell, increased vibration
+Root Causes:
+  1. Lubrication failure - oil starvation from blocked supply line or pump failure
+  2. Over-lubrication causing churning heat
+  3. Bearing misalignment (radial/axial)
+  4. Contaminated lubricant (water ingress, particulate from slag)
+  5. Bearing end-of-life (>25,000 operating hours)
+  6. Cooling water circuit blockage
+Immediate Actions: Reduce load by 30%, check oil level and flow, inspect cooling
+Long-term: Schedule bearing replacement within 72 hours if RUL < 10 days
+
+FAILURE MODE: Excessive Vibration
+Symptoms: Vibration >4.5 mm/s, noise, loose foundation bolts
+Root Causes:
+  1. Impeller imbalance (cavitation erosion, corrosion, deposits)
+  2. Coupling misalignment (angular or parallel)
+  3. Worn or damaged bearings
+  4. Resonance due to foundation issues
+  5. Cavitation (NPSH margin <1.0 m)
+  6. Recirculation in low-flow conditions
+Immediate Actions: Check coupling alignment, reduce flow if cavitating
+Long-term: Dynamic balancing, alignment correction, impeller inspection
+
+FAILURE MODE: Seal Leakage
+Symptoms: Visible leakage, pressure drop, increased power consumption
+Root Causes:
+  1. Mechanical seal face wear (>2 years or 15,000 hours)
+  2. Corrosion attack from process fluid chemistry changes
+  3. Thermal cycling damage
+  4. Shaft deflection exceeding 0.05 mm
+Immediate Actions: Monitor leakage rate (<500 ml/hr acceptable short-term)
+Long-term: Mechanical seal replacement scheduled
+
+FAILURE MODE: Low Flow / Loss of Prime
+Symptoms: Low discharge pressure, motor running light, cavitation noise
+Root Causes:
+  1. Air entrainment / vapor lock
+  2. Suction strainer blocked (>70% clogged)
+  3. Check valve failure
+  4. Impeller wear (efficiency drop >15%)
+  5. Suction pipe blockage
+
+=== SECTION 3: STANDARD OPERATING PROCEDURE - BEARING INSPECTION ===
+SOP-PUMP-003: Bearing Temperature Investigation
+Step 1: Confirm alarm via local instrument and control room DCS reading
+Step 2: Reduce pump load by 25-30% using flow control valve
+Step 3: Inspect oil level sight glass - should be at center mark
+Step 4: Manually check oil flow rate at bearing housing drain port
+Step 5: Take oil sample for contamination analysis (send to lab within 2 hours)
+Step 6: Check cooling water flow to bearing housing heat exchanger
+Step 7: Using vibration analyzer, record bearing frequency spectrum
+Step 8: If temperature exceeds 92°C - initiate controlled shutdown procedure
+Step 9: Allow standby pump to take over load (verify standby auto-start armed)
+Step 10: Document findings in maintenance log with timestamp
+
+=== SECTION 4: PREDICTIVE MAINTENANCE INDICATORS ===
+Remaining Useful Life (RUL) Estimation:
+- Bearing RUL = f(operating hours, temperature deviation, vibration trend slope)
+- At temperature 80-85°C: RUL estimate 15-25 days (monitor daily)
+- At temperature 85-90°C: RUL estimate 5-15 days (inspect every shift)
+- At temperature >90°C: RUL estimate <5 days (immediate attention required)
+- Vibration increase >20% in 7 days: indicates accelerating degradation
+- High-frequency vibration (>1000 Hz spike): inner race defect, RUL <7 days
+
+=== SECTION 5: SPARE PARTS AND PROCUREMENT ===
+Critical Spares (must maintain on-site):
+- SKF 6310 Deep Groove Ball Bearing: Qty 4 (lead time if reorder: 3 days)
+- Mechanical Seal Assembly (John Crane Type 1): Qty 2 (lead time: 7 days)
+- Coupling Insert (Grid Type): Qty 2 (lead time: 2 days)
+- Oil Filter Cartridge (10-micron): Qty 6 (lead time: 1 day)
+
+Non-stock Spares (order on demand):
+- Impeller (stainless steel): Lead time 21 days - ORDER EARLY
+- Shaft Assembly: Lead time 28 days - ORDER EARLY
+- Casing wear rings: Lead time 14 days
+
+=== SECTION 6: MAINTENANCE INTERVALS ===
+Daily: Visual inspection, temperature/vibration reading, oil level check
+Weekly: Vibration spectrum analysis, oil sample if temp elevated
+Monthly: Coupling greasing, motor insulation resistance check
+Quarterly: Mechanical seal inspection, impeller clearance measurement
+Annually: Full overhaul including bearing replacement if >15,000 hours

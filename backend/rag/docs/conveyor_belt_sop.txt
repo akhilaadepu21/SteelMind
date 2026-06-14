@@ -1,0 +1,72 @@
+CONVEYOR BELT SYSTEM - MAINTENANCE SOP AND FAILURE ANALYSIS
+Equipment: Raw Material Conveyor Belts | Document: SOP-CONV-007 | Rev 3.1
+Applicable Systems: Ore conveyor, Coal conveyor, Sinter conveyor, Coke conveyor
+
+=== CONVEYOR BELT FAILURE MODES ===
+
+FAILURE MODE: Belt Misalignment / Tracking Issues
+Symptoms: Belt drifting to one side, edge wear, material spillage
+Root Causes:
+  1. Idler rollers seized or misaligned (most common - 45% of cases)
+  2. Uneven loading from chute misalignment
+  3. Belt splice failure causing uneven tension distribution
+  4. Return side material buildup on idlers causing one-sided tracking
+  5. Conveyor frame distortion due to thermal expansion
+  6. Pulley lagging worn unevenly
+Immediate Action:
+  Step 1: Reduce belt speed by 20% using VFD control
+  Step 2: Identify which side belt is drifting toward
+  Step 3: Adjust tail pulley take-up by 5mm increments toward drift side
+  Step 4: Check 5 idlers on each side of drift point for seized rollers
+  Step 5: If drift persists >30 minutes, initiate controlled stop
+Normal Operating Parameters: Belt tension 15-25 kN/m, Tracking deviation <50mm
+
+FAILURE MODE: Belt Tear / Rip
+Symptoms: Longitudinal rip, material falling through, emergency stop triggered
+Root Causes:
+  1. Tramp metal penetration (iron scrap from raw material)
+  2. Belt joint failure (vulcanized splice age >3 years)
+  3. Impact at loading zone (drop height >1.5m without impact idlers)
+  4. Overloading (>110% of rated capacity)
+Immediate Action: Emergency stop. Isolate and LOTO. Assess tear length.
+Repair time estimate: <500mm tear = 4 hrs (cold repair); >500mm = belt splice replacement 8-24 hrs
+
+FAILURE MODE: Drive Pulley Slip
+Symptoms: Belt speed lower than motor speed, burning smell, reduced throughput
+Root Causes:
+  1. Pulley lagging worn (rubber lagging <8mm remaining)
+  2. Belt tension too low (take-up slack)
+  3. Material buildup on pulley face
+  4. Belt wet from rain/condensation reducing friction
+Immediate Action: Check pulley lagging thickness. Increase tension by adjusting take-up.
+
+FAILURE MODE: Idler Roller Failure
+Symptoms: Noise (squealing/grinding), local belt damage, vibration
+Root Causes:
+  1. Bearing failure in roller (seized bearing = fire risk from friction)
+  2. Corrosion from water ingress in roller shell
+  3. Material packing inside roller
+Immediate Action: Replace seized idler within 1 shift - fire risk from heat generation
+Replace rate guidance: Replace when noise level >85 dB at 1m distance
+
+=== CONVEYOR MAINTENANCE SCHEDULE ===
+Every Shift: Visual walkthrough, check for belt tracking, material spillage
+Daily: Check drive motor current, belt tension reading, emergency stop test
+Weekly: Idler roller inspection (replace seized/noisy rollers), belt splice inspection
+Monthly: Pulley lagging thickness measurement, alignment check with laser
+Quarterly: Full belt splice inspection, take-up gravity system check
+Annual: Complete idler replacement on return strand, belt thickness measurement
+
+=== SPARE PARTS - CONVEYOR SYSTEMS ===
+Critical On-Site Stock:
+- Idler Roller (89mm dia, 1400mm width): Qty 50 (lead time if reorder: 2 days)
+- Belt Splice Kit (Cold Vulcanizing): Qty 10 (lead time: 1 day)
+- Drive Pulley Lagging Sheet: Qty 4 (lead time: 5 days)
+- VFD Drive Unit (75kW): Qty 1 (lead time: 14 days - CRITICAL)
+- Conveyor Belt (Grade EP400/3, 1200mm wide): 50m roll stock (lead time: 21 days)
+
+=== PREDICTIVE INDICATORS ===
+- Motor current >105% rated AND belt speed <95% nominal: slip imminent, inspect lagging
+- Idler roller surface temp >65°C (IR gun check): bearing failure within 48 hours
+- Belt splice age >36 months: elevated risk, schedule replacement at next shutdown
+- Take-up travel >80% of maximum stroke: belt stretch critical, replacement within 30 days

@@ -1,0 +1,94 @@
+HISTORICAL MAINTENANCE AND FAILURE RECORDS - TATA STEEL PLANT
+Document: HIST-MNT-2023-2024 | Maintenance Engineering Department
+
+=== INCIDENT RECORD 001 ===
+Date: 2024-03-15 | Equipment: Pump-12 (Blast Furnace Cooling Loop)
+Failure Type: Bearing overheating - critical shutdown
+Duration of Downtime: 14 hours
+Root Cause Confirmed: Lubrication oil supply line blocked by slag contamination
+  - Bearing temperature reached 96°C before shutdown
+  - Oil sample showed 45% contamination by iron particles
+  - Blocked filter was last replaced 18 months ago (spec: every 6 months)
+Repair Actions: Replaced SKF 6310 bearings (both drive end and non-drive end)
+  Cleaned oil supply lines, replaced oil filter, flushed lubrication system
+  Replaced oil with fresh Mobil DTE 25 Grade
+Production Loss: 14 hours of BF cooling downtime, production rate reduced 40%
+Financial Impact: Rs 2.8 crore direct loss + Rs 0.6 crore emergency maintenance cost
+Lesson Learned: Oil filter replacement interval reduced to 3 months
+Preventive Action: Install oil particle counter inline monitor on Pump-12, Pump-08
+
+=== INCIDENT RECORD 002 ===
+Date: 2024-01-22 | Equipment: Conveyor-B (Sinter Plant Coal Conveyor)
+Failure Type: Belt tear at loading zone
+Duration of Downtime: 19 hours
+Root Cause Confirmed: Tramp metal piece (structural bolt, 80mm length) from upstream
+  - Rip length: 2.3 meters longitudinal tear
+  - Belt age at time of failure: 4.2 years (replacement due at 4 years)
+  - No tramp metal detector was operational (detector offline for 3 weeks)
+Repair Actions: Emergency belt splice repair (cold vulcanizing, 6-hour cure)
+  Repaired tramp metal detector and tested
+Production Loss: 19 hours sinter plant conveyor, partial shutdown
+Financial Impact: Rs 1.9 crore production loss
+Lesson Learned: Tramp metal detector must be operational condition - mandatory
+Preventive Action: Interlock belt drive with tramp metal detector status
+
+=== INCIDENT RECORD 003 ===
+Date: 2023-11-08 | Equipment: Rolling Mill Roll Neck Bearing
+Failure Type: Catastrophic bearing failure - unplanned outage
+Duration of Downtime: 38 hours (extended due to difficulty removing seized bearing)
+Root Cause Confirmed: Water contamination in bearing lubricant
+  - Water content in grease: 8.2% (acceptable limit: <0.5%)
+  - Bearing vibration had been increasing for 21 days prior to failure
+  - Vibration alerts were acknowledged but no action taken (operator fatigue)
+Repair Actions: Full roll change (emergency roll set installed)
+  Bearing housing inspected, found corrosion pitting
+  New bearing ordered (28-day lead time exceeded stock, caused extended downtime)
+Production Loss: 38 hours rolling mill shutdown
+Financial Impact: Rs 7.2 crore (worst incident of the year)
+Lesson Learned: Vibration alerts escalating over multiple days MUST trigger mandatory inspection
+Preventive Action: Automated escalation protocol if vibration alert acknowledged >3 times without action
+
+=== INCIDENT RECORD 004 ===
+Date: 2023-09-14 | Equipment: Cooling Tower Fan (CT-04)
+Failure Type: Fan blade fracture
+Duration of Downtime: 8 hours
+Root Cause Confirmed: Fatigue crack from unbalanced rotation (one blade had erosion)
+  - Vibration had increased from 2.1 to 6.8 mm/s over 45 days
+  - Trend not flagged in weekly reports
+  - Blade material: FRP, 12 years old (design life 10 years)
+Repair Actions: Complete fan assembly replacement (emergency replacement from Rourkela plant)
+Production Loss: Cooling capacity reduced, affected downstream operations
+Financial Impact: Rs 0.9 crore
+Lesson Learned: FRP blade life limit must be enforced; vibration trending reports mandatory
+
+=== INCIDENT RECORD 005 ===
+Date: 2024-06-03 | Equipment: Pump-23 (Continuous Caster Secondary Cooling)
+Failure Type: Mechanical seal failure with water leakage into product zone
+Duration of Downtime: 6 hours
+Root Cause Confirmed: Mechanical seal face worn (seal age: 3.1 years, life: 2 years max)
+  - Water ingress at 8.5 L/min detected
+  - Maintenance schedule override had extended seal replacement interval
+Repair Actions: Emergency seal replacement (seal in stock)
+Production Loss: 6 hours CC-2 downtime
+Lesson Learned: Maintenance interval overrides require engineering sign-off
+Preventive Action: Hard lock on seal replacement interval in CMMS
+
+=== PATTERN ANALYSIS SUMMARY ===
+Top 5 Failure Causes (2023-2024):
+1. Lubrication system failures: 31% of pump incidents
+2. Bearing overheating: 28% of rotating equipment failures
+3. Seal degradation: 18% of pump incidents
+4. Vibration-related damage: 15% of all equipment incidents
+5. Belt/mechanical wear: 25% of conveyor incidents
+
+Mean Time Between Failures (MTBF):
+- Centrifugal Pumps (cooling): 9,200 hours
+- Conveyor Belts: 14,500 hours
+- Rolling Mill Bearings: 6,800 hours
+- Fan Assemblies: 22,000 hours
+
+Average Repair Time by Type:
+- Bearing replacement: 12-16 hours
+- Seal replacement: 4-8 hours
+- Belt splice: 6-20 hours
+- Impeller replacement: 8-14 hours

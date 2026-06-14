@@ -1,0 +1,137 @@
+FAILURE ANALYSIS REPORTS AND LESSONS LEARNED - STEEL PLANT
+Document: FAR-2024 | Prepared by: Maintenance Engineering | Tata Steel
+
+=== FAILURE ANALYSIS REPORT 001 ===
+Date: 2024-08-12 | Equipment: Pump-12 Bearing Failure
+Classification: Lubrication-induced thermal failure
+
+Root Cause Analysis (5-WHY Method):
+WHY 1: Bearing temperature reached 96°C causing shutdown
+WHY 2: Because bearing lubrication oil flow was insufficient
+WHY 3: Because the oil supply line had 80% blockage from slag particles
+WHY 4: Because the inline oil filter was overloaded and bypassed
+WHY 5: Because filter replacement interval was 18 months vs. recommended 6 months
+
+Physical Evidence:
+- Oil sample: ISO 4406 cleanliness Class 22/21/18 (acceptable: 17/15/12)
+- Filter bypass valve: open (contamination > 3.5 bar differential)
+- Bearing inner race: heat discoloration, raceway spalling in 30° arc
+- Oil carbon content: 2.8% (acceptable: <0.5%)
+
+Failure Timeline Reconstruction:
+- Day -45: Filter differential pressure reached 2.8 bar (no alarm set)
+- Day -21: Bearing temperature first exceeded 75°C (WARNING acknowledged, no action)
+- Day -7: Vibration increased 35% (daily readings not reviewed)
+- Day 0: Temperature reached 96°C → automatic shutdown
+
+Key Learning: Set differential pressure alarm at 2.5 bar. Mandatory action on 3 consecutive temperature warnings.
+
+=== FAILURE ANALYSIS REPORT 002 ===
+Date: 2024-05-03 | Equipment: Rolling Mill Backup Roll Bearing
+Classification: Water-contaminated lubrication failure
+
+Root Cause Analysis:
+Primary: High-pressure roll cooling water ingress through worn shaft seal
+Contributing: Grease relief pressure too low allowing water backflow
+Contributing: Grease replenishment interval too long (48 hrs vs. recommended 8 hrs)
+
+Evidence:
+- Water content in bearing grease: 12.4% (limit: 0.5%)
+- Bearing corrosion pitting on races: severe (Grade 4 of 5)
+- Seal: carbon face worn 4.2mm (replace at 3.0mm)
+- Vibration history: increasing trend for 18 days pre-failure
+
+Timeline: Vibration began rising on Day -18, alert acknowledged 7 times without action
+MTTR: 42 hours (extended due to corrosion damage to housing)
+Production loss: Rs 8.1 crore
+
+Corrective Action Plan:
+1. Mandatory seal replacement at 3mm wear (not 5mm as previously practiced)
+2. Grease interval changed to 8 hours (was 48 hours)
+3. Water content alarm added to grease monitoring system
+4. Vibration alert auto-escalate to supervisor if acknowledged >3 times without action
+
+=== FAILURE ANALYSIS REPORT 003 ===
+Date: 2023-12-19 | Equipment: Continuous Caster Cooling Pump (Pump-23)
+Classification: Impeller cavitation erosion
+
+Root Cause:
+System NPSH available dropped below pump NPSH required during low-inventory operation
+Impeller inlet had severe pitting erosion (material loss: ~18% of blade surface)
+
+Symptoms Sequence:
+1. Noise: crackling/popping at pump inlet (cavitation signature)
+2. Discharge pressure fluctuation ±12 bar (normal: ±2 bar)
+3. Motor current: 15% reduction (reduced hydraulic loading)
+4. Vibration: broadband increase, no discrete frequency peak
+5. Flow rate: 20% below setpoint
+
+Repair: Emergency impeller replacement (spare not in stock — ordered emergency, 4-day delay)
+Duration: 108 hours total (104 hours waiting for spare, 4 hours for replacement)
+Cost of delay: Rs 4.2 crore avoidable if spare had been stocked
+
+Recommendation: Stock one replacement impeller for Pump-23 at all times (lead time: 21 days)
+RUL indicator for impeller: Efficiency drop >15% from baseline = replacement within 30 days
+
+=== FAILURE ANALYSIS REPORT 004 ===
+Date: 2024-09-28 | Equipment: Conveyor-A Drive Motor
+Classification: Insulation failure due to overheating
+
+Root Cause: Motor cooling fan blocked by coal dust accumulation (80% blocked)
+Contributing: Ambient temperature +8°C above normal in that section (roof leak = solar gain)
+Contributing: Motor running at 108% FLA for 3 weeks (overloaded)
+
+Evidence:
+- Winding temperature at failure: estimated 185°C (class B limit: 130°C)
+- Insulation resistance: 0.8 MΩ (minimum acceptable: 10 MΩ before energizing)
+- Carbon tracking on winding: phase-to-phase short circuit
+
+Timeline to Failure: 3 weeks of overloading + dust blockage
+
+Repair: Motor rewind — 21 days at external workshop
+Alternative: Emergency motor swap (no spare available — 14-day procurement)
+
+Cost: Rs 1.4 crore direct + Rs 3.8 crore production loss during rewind wait
+
+Lessons:
+1. Monthly compressed air cleaning of motor cooling fins (mandatory)
+2. Insulation resistance check monthly if motor current >105% rated
+3. Stock one spare motor frame for each critical conveyor drive (>75kW)
+
+=== PREDICTIVE MAINTENANCE CORRELATION DATA ===
+Based on 2023-2024 failure history, the following correlations are validated:
+
+Temperature vs. Bearing Life:
+- 65°C baseline: 25,000 hours expected life (nominal)
+- 75°C sustained: ~12,500 hours (50% reduction — Arrhenius factor 2x)
+- 85°C sustained: ~6,250 hours (75% reduction — Arrhenius factor 4x)
+- 90°C+ sustained: <3,125 hours (87.5% reduction — immediate action required)
+
+Vibration vs. Bearing Life:
+- 2.0 mm/s baseline: normal wear rate
+- 4.5 mm/s: 60% life reduction — inspect within 7 days
+- 7.0 mm/s: >90% life reduction — shutdown within 24 hours
+
+Combined High Temperature + High Vibration:
+Both parameters in WARNING range simultaneously: reduce estimated RUL by additional 50%
+Both parameters in CRITICAL range simultaneously: equipment failure likely within 72 hours
+
+Failure Probability Thresholds Validated by Historical Data:
+- RUL < 5 days → 94% of cases failed within 5 days without intervention
+- RUL 5-15 days → 72% of cases required maintenance within stated window
+- RUL 15-30 days → 45% required maintenance; 55% survived with monitoring
+- RUL > 30 days → 12% required unexpected early maintenance
+
+=== PROCUREMENT AND SPARE PARTS CRITICAL PATH ===
+Items that caused extended downtime due to non-availability:
+1. Impeller for Pump-23: 21-day lead time → stock 1 unit minimum
+2. Rolling mill spherical roller bearing FAG 23240: 28-day lead time → stock 2 pairs
+3. VFD Drive 75kW: 14-day lead time → stock 1 unit for critical conveyors
+4. Motor rewinding service: 21 days → maintain 1 spare motor (>75kW) per section
+5. Mechanical seal John Crane Type 1: 7-day lead time → stock 3 assemblies
+
+Items with short lead time (no stocking required, on-demand OK):
+- Standard bearings (SKF 6310 series): 3-day lead time
+- Filter cartridges: 1-day lead time
+- Coupling inserts: 2-day lead time
+- Belt splice kits: 1-day lead time
