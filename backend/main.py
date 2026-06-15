@@ -375,11 +375,30 @@ Question: {query}
 Equipment in context: {equipment_id}
 """.strip()
 
-from agents.workflow import app_graph
-from langchain_core.messages import HumanMessage, AIMessage
 from prometheus_client import generate_latest
-from rag.knowledge_base import build_knowledge_base, add_document_text
-from ml.predictor import train as train_ml_model, predict_for_equipment, get_dataset_stats
+
+# Heavy imports are lazy-loaded inside functions to keep startup memory under 512MB (Render free tier)
+app_graph = None
+HumanMessage = None
+AIMessage = None
+
+def _get_agent_graph():
+    global app_graph, HumanMessage, AIMessage
+    if app_graph is None:
+        from agents.workflow import app_graph as _g
+        from langchain_core.messages import HumanMessage as _H, AIMessage as _A
+        app_graph = _g
+        HumanMessage = _H
+        AIMessage = _A
+    return app_graph
+
+def _get_ml():
+    from ml.predictor import predict_for_equipment, get_dataset_stats
+    return predict_for_equipment, get_dataset_stats
+
+def _get_rag():
+    from rag.knowledge_base import add_document_text
+    return add_document_text
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
 logger = logging.getLogger("SteelMindAPI")
@@ -435,6 +454,7 @@ async def invoke_agent(req: AgentRequest):
     session = sessions.setdefault(session_id, {"history": [], "equipment_id": req.equipment_id})
 
     # Build message history for context
+    _graph = _get_agent_graph()
     history_messages = []
     for turn in session["history"][-6:]:  # last 6 turns for context
         history_messages.append(HumanMessage(content=turn["user"]))
@@ -452,7 +472,7 @@ async def invoke_agent(req: AgentRequest):
     }
 
     try:
-        result = app_graph.invoke(state)
+        result = _graph.invoke(state)
 
         # Save turn to session history
         final_msg = result.get("messages", [])[-1].content if result.get("messages") else ""
@@ -541,6 +561,7 @@ async def upload_document(file: UploadFile = File(...)):
         text = content.decode("utf-8", errors="replace")
     except Exception:
         raise HTTPException(status_code=400, detail="Failed to decode file content.")
+    add_document_text = _get_rag()
     success = add_document_text(text, metadata={"source_file": file.filename, "upload_time": time.time()})
     if success:
         return {"status": "indexed", "filename": file.filename, "characters": len(text), "message": "Document added to knowledge base."}
@@ -623,18 +644,21 @@ class MLPredictRequest(BaseModel):
 @app.post("/api/ml/predict")
 async def ml_predict(req: MLPredictRequest):
     """Run AI4I model prediction for an equipment with current sensor readings."""
+    predict_for_equipment, _ = _get_ml()
     result = predict_for_equipment(req.equipment_id, req.sensor_data)
     return result
 
 @app.get("/api/ml/predict/{equipment_id}")
 async def ml_predict_get(equipment_id: str):
     """GET version — returns prediction for equipment using static profile."""
+    predict_for_equipment, _ = _get_ml()
     result = predict_for_equipment(equipment_id)
     return result
 
 @app.get("/api/ml/dataset/stats")
 async def dataset_stats():
     """Return AI4I dataset statistics and model status."""
+    _, get_dataset_stats = _get_ml()
     return get_dataset_stats()
 
 
